@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Reccomender System</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<style>
+    .text-white{
+        color: white;
+    }
+</style> 
+
+<body style="background-color: black;">
+    
+    <nav class="navbar" style="background-color: #00a65a;">
+        <p class="navbar-brand">My Book Reccomender</p>
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li><a href="/recommend">Recommend</a></li>
+            <li><a>Contact us</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-white" style="font-size: 50px;">Top 50 Books</h1>
+            </div>
+
+            {% for i in range(book_name|length)%}
+            <div class="col-md-3 text-white" style="margin-top: 40px;">
+                <div class="card-body">
+                    <div class="card-body">
+                        <img  src= "{{ Image[i] }} "  > 
+                        <p style="font-size: 16px; font-weight: bold; font-family: cursive;">{{  book_name[i] }}</p style="text-size-adjust: 15px;">
+                        <h4> {{ author[i] }}</h4>
+                        <h4>Votes - {{  votes[i]}}</h4>
+                        <h4>Rating - {{ rating[i] }}</h4>
+                    </div>
+                </div>
+            </div>
+            {%  endfor%}
+
+
+
+
+            
+        </div>
+
+    </div>
+
+</body>
+</html>
